@@ -19,3 +19,4 @@ const MovieCard = ({ title, url }) => {
     </div>
   );
 };
+export default MovieCard;
