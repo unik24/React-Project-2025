@@ -1,0 +1,52 @@
+/* Button.css */
+.btn {
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px;
+  }
+  
+  
+  /* buttonType */
+  
+  .btn.primary {
+    background-color: blue;
+    color: white;
+  }
+  
+  .btn.secondary {
+    background-color: gray;
+    color: black;
+  }
+  
+  .btn.cancel {
+    background-color: red;
+    color: white;
+  }
+  
+  
+  /* buttonSize */
+  
+  .btn.small {
+    font-size: 12px;
+    padding: 3px 15px;
+  }
+  
+  .btn.medium {
+    font-size: 16px;
+    padding: 5px 20px;
+  }
+  
+  .btn.large {
+    font-size: 20px;
+    padding: 7px 25px;
+  }
+  
+  
+  /* buttonDisabled */
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
