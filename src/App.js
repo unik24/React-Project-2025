@@ -1,5 +1,5 @@
 import "./App.css";
-import MyButton from "./components/my-button";
+import Button from "./components/button.js";
 
 
 function App() {
@@ -7,22 +7,22 @@ function App() {
 		<div>
 
 			<div class="button-holder">
-				<MyButton buttonType="primary">Primary</MyButton>
-				<MyButton buttonType="secondary">Secondary</MyButton>
-				<MyButton buttonType="cancel">Cancel</MyButton>
+				<Button buttonType="primary">Primary</Button>
+				<Button buttonType="secondary">Secondary</Button>
+				<Button buttonType="cancel">Cancel</Button>
 			</div>
 
 			<div  class="button-holder">
-				<MyButton buttonType="primary" buttonSize="large">Large</MyButton>
-				<MyButton buttonType="secondary" buttonSize="medium">Medium</MyButton>
-				<MyButton buttonType="cancel" buttonSize="small">Small</MyButton>
+				<Button buttonType="primary" buttonSize="large">Large</Button>
+				<Button buttonType="secondary" buttonSize="medium">Medium</Button>
+				<Button buttonType="cancel" buttonSize="small">Small</Button>
 			</div>
 
 
 			<div  class="button-holder">
-				<MyButton buttonType="primary" buttonSize="large"  buttonDisabled={true}>L Disabled</MyButton>
-				<MyButton buttonType="secondary" buttonSize="medium"  buttonDisabled={true}>M Disabled</MyButton>
-				<MyButton buttonType="cancel" buttonSize="small"  buttonDisabled={true}>S Disabled</MyButton>
+				<Button buttonType="primary" buttonSize="large"  buttonDisabled={true}>L Disabled</Button>
+				<Button buttonType="secondary" buttonSize="medium"  buttonDisabled={true}>M Disabled</Button>
+				<Button buttonType="cancel" buttonSize="small"  buttonDisabled={true}>S Disabled</Button>
 			</div>
 
 		</div>
