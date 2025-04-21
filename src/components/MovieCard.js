@@ -3,11 +3,10 @@ import React, { useState } from "react";
 const MovieCard = ({ title, url, release_date }) => {
   const [liked, setLiked] = useState(false);
   return (
-    <div className="movie-card">
-      <div className="movie-poster">
-        <img src={url} alt={title} className="movie-poster" />
+    <div>
+      <div>
+        <img src={url} alt={title} />
         <button
-          className="favorite-btn"
           onClick={() => {
             setLiked(!liked);
           }}
@@ -15,8 +14,8 @@ const MovieCard = ({ title, url, release_date }) => {
           {liked ? "♥" : "♡"}
         </button>
       </div>
-      <div className="movie-info">
-        <h3 className="movie-title">{title}</h3>
+      <div>
+        <h3>{title}</h3>
         <p>{release_date}</p>
       </div>
     </div>
