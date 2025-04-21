@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "./Button";
 
 const MovieCard = ({ title, url, release_date }) => {
   const [liked, setLiked] = useState(false);
@@ -9,7 +10,7 @@ const MovieCard = ({ title, url, release_date }) => {
     <div>
       <div>
         <img src={url} alt={title} />
-        <button onClick={toggleLike}>{liked ? "♥" : "♡"}</button>
+        <Button onClick={toggleLike} text={liked ? "♥" : "♡"} />
       </div>
       <div>
         <h3>{title}</h3>
