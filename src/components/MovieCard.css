@@ -48,32 +48,6 @@
 .movie-card:hover .movie-overlay {
   opacity: 1;
 }
-/* the Button component doesn't have className prop yet, so styling via class names won't apply */
-.favorite-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: white;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s;
-}
-
-.favorite-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.favorite-btn.active {
-  color: #ff4757;
-}
-/* ------- */
 .rating-select {
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
