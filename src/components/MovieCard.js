@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import "./MovieCard.css";
 
 const MovieCard = ({
   title,
@@ -15,13 +16,20 @@ const MovieCard = ({
   const toggleLike = () => {
     setLiked((prev) => !prev);
   };
+
   return (
-    <div>
-      <div>
+    <div className="movie-card">
+      <div className="movie-poster">
         <img src={url} alt={title} />
-        <Button onClick={toggleLike} text={liked ? "♥" : "♡"} />
+        <div className="movie-overlay">
+          <Button
+            onClick={toggleLike}
+            text={liked ? "♥" : "♡"}
+            className={`favorite-btn ${liked ? "active" : ""}`}
+          />
+        </div>
       </div>
-      <div>
+      <div className="movie-info">
         <h3>{title}</h3>
         <p>
           <strong>Release Date:</strong> {release_date}
@@ -45,4 +53,5 @@ const MovieCard = ({
     </div>
   );
 };
+
 export default MovieCard;
