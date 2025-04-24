@@ -1,4 +1,42 @@
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
+  /* ===== Light Theme */
+  --color-primary: #0d6efd; // Crisp blue (focus color)
+  --color-primary-light: #e7f1ff; // Very light blue tint
+  --color-primary-dark: #0b5ed7; // Slightly darker blue
+
+  --color-accent: #dc3545; // Red (for ratings/important actions)
+  --color-accent-light: #f8d7da;
+  --color-accent-dark: #bb2d3b;
+
+  --color-background: #ffffff; // Pure white background
+  --color-surface: #f8f9fa; // Slightly off-white (for contrast)
+  --color-card: #ffffff; // White cards with shadow (see note below)
+
+  --color-text: #212529; // Dark gray (almost black)
+  --color-text-secondary: #6c757d; // Medium gray
+  --color-text-muted: #adb5bd; // Light gray
+  --color-border: #dee2e6; // Very light gray borders
+
+  /* Shadow for movie cards */
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+  /* ===== Dark Theme (Complementary) ===== */
+  &[data-theme="dark"] {
+    --color-primary: #4895ef; // Softer blue
+    --color-primary-light: #1e3a8a;
+    --color-primary-dark: #3f37c9;
+
+    --color-accent: #ff758f; // Vibrant pink-red
+    --color-accent-light: #ffccd5;
+    --color-accent-dark: #c9184a;
+
+    --color-background: #121212; // Near-black
+    --color-surface: #1e1e1e; // Dark gray
+    --color-card: #2d2d2d; // Card background
+
+    --color-text: #f8f9fa; // Near-white
+    --color-text-secondary: #adb5bd; // Light gray
+    --color-border: #343a40; // Dark borders
+  }
 }
