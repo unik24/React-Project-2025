@@ -1,5 +1,5 @@
 import React from "react";
-import MovieCard from "../components/MovieCard";
+import MovieCard from "../components/MovieCard/MovieCard";
 import "./Home.css";
 const sampleMoviePoster =
   "https://img.freepik.com/free-vector/cinema-film-production-realistic-transparent-composition-with-isolated-image-clapper-with-empty-fields-vector-illustration_1284-66163.jpg?t=st=1745402755~exp=1745406355~hmac=67b90c20a4f4084ecb26242fb3b804420953f51f07752f9519b84cdb2339f93a&w=740";
