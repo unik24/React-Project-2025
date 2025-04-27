@@ -38,7 +38,7 @@ const movies = [
     country: "Canada",
   },
   {
-    id: 3,
+    id: 4,
     title: "Movie Title 4",
     url: sampleMoviePoster,
     release_date: "2025-02-10",
