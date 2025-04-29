@@ -1,13 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./MoviePoster.css";
+import Button from "../Button";
 
-const MoviePoster = ({ url, title }) => {
+const MoviePoster = ({ url, title, onLike, liked }) => {
   return (
     <div className="movie-poster">
-      <Link to={`/movie/${title}`}>
-        <img src={url} alt={title} />
-      </Link>
+      <img src={url} alt={title} />
+      <div className="movie-overlay">
+        <Button
+          onClick={onLike}
+          text={liked ? "♥" : "♡"} // Using 'text' prop as required
+          className={`favorite-btn ${liked ? "active" : ""}`}
+        />
+      </div>
     </div>
   );
 };
