@@ -8,7 +8,7 @@ const MoviePoster = ({ url, title, onLike, liked }) => {
       <div className="movie-overlay">
         <Button
           onClick={onLike}
-          text={liked ? "♥" : "♡"} // Using 'text' prop as required
+          text={liked ? "♥" : "♡"}
           className={`favorite-btn ${liked ? "active" : ""}`}
         />
       </div>
