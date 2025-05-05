@@ -13,6 +13,10 @@
 .card:hover {
   transform: translateY(-5px);
 }
+.linkWrapper {
+  text-decoration: none;
+  color: inherit;
+}
 
 @media (max-width: 768px) {
   .card {
