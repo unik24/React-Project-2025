@@ -1,16 +1,17 @@
 import React from "react";
-import Button from "../Button";
+import styles from "./MoviePoster.module.css";
 
 const MoviePoster = ({ url, title, onLike, liked }) => {
   return (
-    <div className="movie-poster">
+    <div className={styles.poster}>
       <img src={url} alt={title} />
-      <div className="movie-overlay">
-        <Button
+      <div className={styles.overlay}>
+        <button
           onClick={onLike}
-          text={liked ? "♥" : "♡"}
-          className={`favorite-btn ${liked ? "active" : ""}`}
-        />
+          className={`${styles.favoriteBtn} ${liked ? styles.active : ""}`}
+        >
+          {liked ? "♥" : "♡"}
+        </button>
       </div>
     </div>
   );

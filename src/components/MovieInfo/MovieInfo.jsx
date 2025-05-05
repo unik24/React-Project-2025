@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./MovieInfo.module.css";
 
 const MovieInfo = ({ title }) => {
   return (
-    <div className="movie-info">
+    <div className={styles.info}>
       <h3>{title}</h3>
     </div>
   );

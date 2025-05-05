@@ -12,7 +12,7 @@
   margin-bottom: 2rem;
 }
 
-.movie-list {
+.movieList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
@@ -31,7 +31,7 @@
     margin-bottom: 1.5rem;
   }
 
-  .movie-list {
+  .movieList {
     gap: 1.2rem;
   }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MovieCard from "../components/MovieCard/MovieCard";
-import "./Home.css";
+import styles from "./Home.module.css";
 
 const sampleMoviePoster =
   "https://img.freepik.com/free-vector/cinema-film-production-realistic-transparent-composition-with-isolated-image-clapper-with-empty-fields-vector-illustration_1284-66163.jpg";
@@ -25,9 +25,9 @@ const Homepage = () => {
   };
 
   return (
-    <div className="homepage">
+    <div className={styles.homepage}>
       <h2>Movie List</h2>
-      <div className="movie-list">
+      <div className={styles.movieList}>
         {movies.map(({ id, title, url, liked }) => (
           <MovieCard
             key={id}

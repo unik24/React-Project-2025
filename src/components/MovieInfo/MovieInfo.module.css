@@ -1,0 +1,17 @@
+/* MovieInfo.module.css */
+.info {
+  padding: 1rem;
+  flex: 1;
+}
+
+.info h3 {
+  font-size: 1rem;
+  margin: 0;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .info {
+    padding: 0.75rem;
+  }
+}

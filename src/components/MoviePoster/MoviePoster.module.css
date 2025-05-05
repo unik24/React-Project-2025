@@ -1,0 +1,58 @@
+/* MoviePoster.module.css */
+.poster {
+  position: relative;
+  aspect-ratio: 2/3;
+  width: 100%;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.8)
+  );
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.poster:hover .overlay {
+  opacity: 1;
+}
+
+.favoriteBtn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.favoriteBtn.active {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .favoriteBtn {
+    width: 28px;
+    height: 28px;
+  }
+}
