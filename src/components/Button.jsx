@@ -1,9 +1,16 @@
-import React from 'react';
-import './Button.css'; // CSS file
+import React from "react";
+//import './Button.css'; // CSS file
 
-const Button = ({ children, onClick, buttonType = 'primary', buttonSize = 'medium', buttonDisabled = false }) => {
- 
-  const className = `btn ${buttonType} ${buttonSize} ${buttonDisabled ? 'disabled' : ''}`;
+const Button = ({
+  children,
+  onClick,
+  buttonType = "primary",
+  buttonSize = "medium",
+  buttonDisabled = false,
+}) => {
+  const className = `btn ${buttonType} ${buttonSize} ${
+    buttonDisabled ? "disabled" : ""
+  }`;
 
   return (
     <button
@@ -16,5 +23,3 @@ const Button = ({ children, onClick, buttonType = 'primary', buttonSize = 'mediu
   );
 };
 export default Button;
-
-
