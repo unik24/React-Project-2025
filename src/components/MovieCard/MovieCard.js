@@ -1,11 +1,11 @@
 import React from "react";
 import MoviePoster from "../MoviePoster/MoviePoster";
 import MovieInfo from "../MovieInfo/MovieInfo";
-import "./MovieCard.css";
+import styles from "./MovieCard.module.css";
 
 const MovieCard = ({ title, url, liked, onLikeToggle }) => {
   return (
-    <div className="movie-card">
+    <div className={styles.card}>
       <MoviePoster
         url={url}
         title={title}
