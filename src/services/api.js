@@ -17,3 +17,29 @@ export const fetchMovies = async (page = 1) => {
     throw error;
   }
 };
+
+export const searchMovies = async (query) => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(
+        query
+      )}`
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    const resultsSearch = data.results.map((movie) => ({
+      ...movie,
+      url: movie.poster_path
+        ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+        : "https://via.placeholder.com/500x750?text=No+Poster",
+    }));
+
+    return resultsSearch;
+  } catch (err) {
+    console.error("Failed searching movies:", err);
+    throw err;
+  }
+};

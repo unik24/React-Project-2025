@@ -1,0 +1,70 @@
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  color: #555;
+  pointer-events: none;
+  /* comentario */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.inputElement {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex-grow: 1;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fff;
+}
+
+.inputElement:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.inputElement::placeholder {
+  color: #d1d5db;
+}
+
+.passwordInput {
+  letter-spacing: 0.1em;
+}
+/* 
+.searchInput {
+  padding-left: 35px;
+  /* padding: 10px 10px 10px 35px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  flex-grow: 1; */
+
+.inputSmall {
+  font-size: 14px;
+  padding: 8px 10px;
+  max-width: 300px;
+}
+
+.inputLarge {
+  font-size: 18px;
+  padding: 12px 14px;
+  max-width: 500px;
+}
+
+.hasIcon {
+  padding-left: 35px;
+}
