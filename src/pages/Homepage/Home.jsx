@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { fetchMovies } from "../services/api";
-import MovieCard from "../components/MovieCard/MovieCard";
+import { fetchMovies } from "../../services/api";
+import MovieCard from "../../components/MovieCard/MovieCard";
 import styles from "./Home.module.css";
 
 const Homepage = () => {
@@ -50,6 +50,7 @@ const Homepage = () => {
         {movies.map(({ id, title, url, liked }) => (
           <MovieCard
             key={id}
+            id={id}
             title={title}
             url={url}
             liked={liked}
