@@ -4,10 +4,10 @@ import MovieInfo from "../MovieInfo/MovieInfo";
 import styles from "./MovieCard.module.css";
 import { Link } from "react-router-dom";
 
-const MovieCard = ({ title, url, liked, onLikeToggle }) => {
+const MovieCard = ({ id, title, url, liked, onLikeToggle }) => {
   return (
     <div className={styles.card}>
-      <Link to={`/movies/${title}`} className={styles.linkWrapper}>
+      <Link to={`/movies/${id}`} className={styles.linkWrapper}>
         <MoviePoster
           url={url}
           title={title}

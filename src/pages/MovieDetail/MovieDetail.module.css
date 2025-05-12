@@ -1,0 +1,56 @@
+.blackbg {
+  min-height: 100vh;
+  background-color: #000000;
+  color: white;
+}
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  background: #020024;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(10, 10, 13, 1) 35%,
+    rgb(118, 118, 118) 100%
+  );
+}
+
+.poster {
+  width: 250px;
+  margin: 25px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.details {
+  flex: 1;
+  color: aliceblue;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.information {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 4rem auto;
+  padding: 2rem;
+  width: 80%;
+  box-sizing: border-box;
+  border: 1px solid white;
+  color: white;
+}
+
+.information > div {
+  flex: 1;
+}
+
+.trailer iframe {
+  max-width: 100%;
+  border-radius: 8px;
+}

@@ -17,3 +17,28 @@ export const fetchMovies = async (page = 1) => {
     throw error;
   }
 };
+
+export const fetchMovieDetails = async (movieId) => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/movie/${movieId}?api_key=${process.env.REACT_APP_TMDB_API_KEY}`
+    );
+    if (!response.ok) throw new Error("Movie not found");
+    return await response.json();
+  } catch (error) {
+    console.error("API Error:", error);
+    throw error;
+  }
+};
+
+export const fetchMovieTrailer = async (movieId) => {
+  const response = await fetch(
+    `${BASE_URL}/movie/${movieId}/videos?api_key=${process.env.REACT_APP_TMDB_API_KEY}`
+  );
+  if (!response.ok) throw new Error("Failed to fetch trailer");
+  const data = await response.json();
+  const trailer = data.results.find(
+    (video) => video.type === "Trailer" && video.site === "YouTube"
+  );
+  return trailer ? trailer.key : null;
+};
