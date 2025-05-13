@@ -1,0 +1,39 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* background-color: #222; */
+  background-color: #373636;
+  /* color: #eee; */
+  font-size: 1.3rem;
+  margin: 0;
+  color: white;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  color: #eee;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+.links {
+  display: flex;
+  gap: 15px;
+}
+
+.link {
+  color: var(--color-primary-light);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--color-primary-dark);
+}
