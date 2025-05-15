@@ -7,7 +7,10 @@ const MoviePoster = ({ url, title, onLike, liked }) => {
       <img src={url} alt={title} />
       <div className={styles.overlay}>
         <button
-          onClick={onLike}
+          onClick={(e) => {
+             e.preventDefault(); // prevents the Link from being triggered
+             onLike();            //toggles the like state
+          }}
           className={`${styles.favoriteBtn} ${liked ? styles.active : ""}`}
         >
           {liked ? "♥" : "♡"}

@@ -36,23 +36,37 @@
 
 .favoriteBtn {
   position: absolute;
-  bottom: 1rem;
+  top: 1rem;
   right: 1rem;
-  width: 32px;
-  height: 32px;
-  font-size: 1.2rem;
-  background: none;
+  width: 40px;
+  height: 40px;
+  font-size: 1.8rem; /*Bigger heart */
+  background: rgba(0, 0, 0, 0.4); /*Add contrast */
   border: none;
+  border-radius: 50%; /*Optional: circular button */
+  color: white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.favoriteBtn:hover {
+  transform: scale(1.1);
 }
 
 .favoriteBtn.active {
   color: red;
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker when active */
 }
 
 @media (max-width: 768px) {
   .favoriteBtn {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
   }
 }
+
