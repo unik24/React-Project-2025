@@ -2,12 +2,17 @@ import React from "react";
 import styles from "./MoviePoster.module.css";
 
 const MoviePoster = ({ url, title, onLike, liked }) => {
+  console.log("MoviePoster URL:", url);
+
   return (
     <div className={styles.poster}>
       <img src={url} alt={title} />
       <div className={styles.overlay}>
         <button
-          onClick={onLike}
+          onClick={(e) => {
+             e.preventDefault(); // prevents the Link from being triggered
+             onLike();            //toggles the like state
+          }}
           className={`${styles.favoriteBtn} ${liked ? styles.active : ""}`}
         >
           {liked ? "♥" : "♡"}

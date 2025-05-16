@@ -1,0 +1,49 @@
+.btn {
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.buttonHolder {
+  margin: 20px;
+}
+
+/* Type Variants */
+.primary {
+  background-color: blue;
+  color: white;
+}
+
+.secondary {
+  background-color: gray;
+  color: black;
+}
+
+.cancel {
+  background-color: red;
+  color: white;
+}
+
+/* Size Variants */
+.small {
+  font-size: 12px;
+  padding: 3px 15px;
+}
+
+.medium {
+  font-size: 16px;
+  padding: 5px 20px;
+}
+
+.large {
+  font-size: 20px;
+  padding: 7px 25px;
+}
+
+/* Disabled State */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
