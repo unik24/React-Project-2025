@@ -15,6 +15,9 @@ const Navbar = () => {
         <Link to="/profile" className={styles.link}>
           Profile
         </Link>
+         <Link to="/favorites" className={styles.link}>
+          Favorites
+        </Link>
       </div>
     </nav>
   );

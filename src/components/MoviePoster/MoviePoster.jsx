@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./MoviePoster.module.css";
 
 const MoviePoster = ({ url, title, onLike, liked }) => {
+  console.log("MoviePoster URL:", url);
+
   return (
     <div className={styles.poster}>
       <img src={url} alt={title} />
