@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieDetails, fetchMovieTrailer } from "../../services/api";
 import styles from "./MovieDetail.module.css";
+import CommentSection from "../../components/Comment/Comment";
 
 const MovieDetail = () => {
   const { movieId } = useParams();
@@ -35,32 +36,27 @@ const MovieDetail = () => {
   return (
     <div className={styles.blackbg}>
       <div className={styles.hero}>
-        <img
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          alt={movie.title}
-          className={styles.poster}
-        />
-        <div className={styles.details}>
-          <h1>{movie.title}</h1>
-          <p>⭐ {movie.vote_average.toFixed(1)}</p>
-          <p>
-            {" "}
-            {movie.production_countries?.[0]?.name || "Country not specified"}
-          </p>
-          <p>Genres: {movie.genres.map((g) => g.name).join(", ")}</p>
+        <div className={styles.contentWrapper}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt={movie.title}
+            className={styles.poster}
+          />
+          <div className={styles.heroItems}>
+            <div className={styles.details}>
+              <h1>{movie.title}</h1>
+              <p>⭐ {movie.vote_average.toFixed(1)}</p>
+              <p>
+                {movie.production_countries?.[0]?.name ||
+                  "Country not specified"}
+              </p>
+              <p>Genres: {movie.genres.map((g) => g.name).join(", ")}</p>
+              <p> {new Date(movie.release_date).getFullYear()}</p>
+            </div>
+          </div>
         </div>
       </div>
       <div className={styles.information}>
-        <div>
-          <p>Description: {movie.overview}</p>
-          <p>Release date: {new Date(movie.release_date).getFullYear()}</p>
-          <p>Runtime: {movie.runtime} minutes</p>
-          <p>Tagline: "{movie.tagline}"</p>
-          <p>Status: {movie.status}</p>
-          <p>Language: {movie.original_language.toUpperCase()}</p>
-          <p>Budget: ${movie.budget.toLocaleString()}</p>
-          <p>Revenue: ${movie.revenue.toLocaleString()}</p>
-        </div>
         {trailerKey && (
           <div className={styles.trailer}>
             <iframe
@@ -74,11 +70,18 @@ const MovieDetail = () => {
             ></iframe>
           </div>
         )}
+        <div>
+          <p>Description: {movie.overview}</p>
+
+          <p>Runtime: {movie.runtime} minutes</p>
+          {/* <p>Tagline: "{movie.tagline}"</p> */}
+          <p>Status: {movie.status}</p>
+          <p>Language: {movie.original_language.toUpperCase()}</p>
+          <p>Budget: ${movie.budget.toLocaleString()}</p>
+          {/* <p>Revenue: ${movie.revenue.toLocaleString()}</p> */}
+        </div>
       </div>
-      <div className={styles.information}>
-        <label>Comment</label>
-        <input></input>
-      </div>
+      <CommentSection />
     </div>
   );
 };

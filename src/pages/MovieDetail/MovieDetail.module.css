@@ -4,23 +4,38 @@
   color: white;
 }
 .hero {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  background: #020024;
   background: linear-gradient(
     90deg,
     rgba(2, 0, 36, 1) 0%,
     rgba(10, 10, 13, 1) 35%,
     rgb(118, 118, 118) 100%
   );
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7rem;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .poster {
-  width: 250px;
-  margin: 25px;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.heroItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .details {
@@ -36,6 +51,7 @@
 
 .information {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
   margin: 4rem auto;
