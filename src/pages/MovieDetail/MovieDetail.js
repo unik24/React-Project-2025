@@ -35,7 +35,16 @@ const MovieDetail = () => {
 
   return (
     <div className={styles.blackbg}>
-      <div className={styles.hero}>
+      <div
+        className={styles.hero}
+        style={{
+          backgroundImage: `linear-gradient(to right, 
+  rgba(0, 0, 0, 0.8) 30%, 
+  rgba(255, 255, 255, 0.3) 100%), url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className={styles.contentWrapper}>
           <img
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
