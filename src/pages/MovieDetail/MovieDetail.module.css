@@ -4,12 +4,6 @@
   color: white;
 }
 .hero {
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(10, 10, 13, 1) 35%,
-    rgb(118, 118, 118) 100%
-  );
   width: 100%;
   padding: 2rem 0;
 }
@@ -71,4 +65,53 @@
 .trailer iframe {
   max-width: 100%;
   border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .poster {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .heroItems {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .information {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 95%;
+  }
+
+  .information > div {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .poster {
+    display: none;
+  }
+
+  .hero {
+    padding: 1.5rem 0;
+  }
+  .details {
+    align-items: center;
+  }
+  .information {
+    padding: 1rem 0.5rem;
+  }
+
+  .loading {
+    font-size: 1rem;
+  }
 }
