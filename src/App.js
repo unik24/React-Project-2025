@@ -6,20 +6,21 @@ import MovieDetail from "./pages/MovieDetail/MovieDetail";
 import Layout from "./components/Layout/Layout/Layout";
 import { Profile } from "./pages/Profile/Profile";
 import Favorites from "./pages/Favorites/Favorites";
+import { HomeResetProvider } from "./context/HomeResetContext";
 
 function App() {
   return (
     <div className="App">
-      <Layout>
-        
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/movies/:movieId" element={<MovieDetail />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/favorites" element={<Favorites />} />
-        </Routes>
-        
-      </Layout>
+      <HomeResetProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/movies/:movieId" element={<MovieDetail />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/favorites" element={<Favorites />} />
+          </Routes>
+        </Layout>
+      </HomeResetProvider>
     </div>
   );
 }

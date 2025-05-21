@@ -4,11 +4,13 @@ import Input from "../Input/Input";
 import SearchIcon from "../SearchIcon/SearchIcon";
 import styles from "./SearchBar.module.css";
 import { searchMovies } from "../../services/api";
+import { useHomeReset } from "../../context/HomeResetContext";
 
 function SearchBar({ onResults }) {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const { resetKey } = useHomeReset();
 
   const handleSearch = useCallback(async () => {
     if (!query.trim()) return;
@@ -30,6 +32,11 @@ function SearchBar({ onResults }) {
       handleSearch();
     }
   }, [query, handleSearch]);
+
+  useEffect(() => {
+    setQuery("");
+    setError(null);
+  }, [resetKey]);
 
   return (
     <div className={styles.searchBarContainer}>
