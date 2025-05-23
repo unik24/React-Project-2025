@@ -31,13 +31,16 @@ This project was developed as part of a study course to practice React.js and wo
 
 This project was developed by:
 
-- [Farzaneh Ahmadi]([https://github.com/farzaneh](https://github.com/FarzanehAhmadi))  
-- [Anabella Meluzzi]([https://github.com/teammate1](https://github.com/AnabellaMeluzzi))  
-- [Jennylyn Anastasov]([https://github.com/teammate2](https://github.com/unik24))
+- [Farzaneh Ahmadi](https://github.com/FarzanehAhmadi)  
+- [Anabella Meluzzi](https://github.com/AnabellaMeluzzi)  
+- [Jennylyn Anastasov](https://github.com/unik24)
 
 ## 🙏 Acknowledgments
 
-We would like to thank our mentors, [Chris Khong][(https://github.com/mentorusername](https://github.com/chriskhongqarma)) and Paolo Bozzini (https://github.com/PaoloBozzini) for their guidance and support during this project.
+We would like to thank our mentors,  
+[Chris Khong](https://github.com/chriskhongqarma) and  
+[Paolo Bozzini](https://github.com/PaoloBozzini)  
+for their guidance and support during this project.
 ## 📦 Installation
 
 1. Clone the repository:
