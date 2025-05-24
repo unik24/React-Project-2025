@@ -45,4 +45,4 @@ for their guidance and support during this project.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/movie-diary.git
+   [git clone https://github.com/yourusername/movie-diary.git](https://github.com/unik24/React-Project-2025.git)
