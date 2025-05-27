@@ -54,7 +54,7 @@ function SearchBar({ onResults }) {
         className={styles.searchButton}
         disabled={loading}
       >
-        Search
+      <SearchIcon />
       </Button>
       {error && <div className={styles.error}>{error}</div>}
     </div>
