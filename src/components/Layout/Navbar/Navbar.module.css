@@ -37,3 +37,68 @@
 .link:hover {
   color: var(--color-primary-dark);
 }
+
+/* Hamburger button styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.bar1 {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.bar2 {
+  opacity: 0;
+}
+
+.bar3 {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #373636;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    width: 100%;
+    display: none;
+    z-index: 999;
+  }
+  .link {
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 1s ease;
+  }
+  .link:hover {
+    color: red;
+  }
+
+  .show {
+    display: flex;
+  }
+}
