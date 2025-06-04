@@ -1,26 +1,22 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
 .inputContainer {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 400px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.icon {
-  position: absolute;
-  left: 10px;
-  color: #555;
-  pointer-events: none;
-  /* comentario */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+  flex-grow: 1;
 }
 
 .inputElement {
+  width: 100%;
+  min-width: 0;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
@@ -38,20 +34,16 @@
 }
 
 .inputElement::placeholder {
-  color: #d1d5db;
+  color: #999;
 }
 
 .passwordInput {
   letter-spacing: 0.1em;
 }
-/* 
-.searchInput {
-  padding-left: 35px;
-  /* padding: 10px 10px 10px 35px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  flex-grow: 1; */
+
+.passwordInput::placeholder {
+  letter-spacing: 0;
+}
 
 .inputSmall {
   font-size: 14px;
@@ -66,5 +58,41 @@
 }
 
 .hasIcon {
-  padding-left: 35px;
+  padding-left: 35px !important;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  color: #555;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.externalIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .inputContainer {
+    max-width: 400px;
+  }
 }
