@@ -12,10 +12,19 @@ code {
     monospace;
 }
 html,
-body {
+body,
+#root {
   margin: 0;
   padding: 0;
   background-color: #000000;
   color: white;
   height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Previene scroll horizontal si no es intencional */
+  overflow-y: auto;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
