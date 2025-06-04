@@ -216,8 +216,8 @@
   }
 
   .dropdown {
-    top: auto;
-    bottom: 0;
+    top: calc(100% + 10px);
+    bottom: auto;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -284,7 +284,7 @@
 
   .links {
     position: absolute;
-    top: 60px; /* adjust based on your navbar height */
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: #373636;
