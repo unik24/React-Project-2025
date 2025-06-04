@@ -1,14 +1,19 @@
 .favorites {
   padding: 2rem;
+  width: 100%;
+  
 }
 
 .moviesGrid {
   display: grid;
+  width: 100%;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
-.favoritesEmpty {
-  text-align: center;
-  padding: 2rem;
+.movieCard {
+  width: 100%;
+}
+.favorites h2 {
+    margin-bottom: 10vh;
 }
