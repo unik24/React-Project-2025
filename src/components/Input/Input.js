@@ -22,10 +22,14 @@ const Input = ({
     onChangeRef.current = onChange;
   }, [onChange]);
 
+  // useEffect(() => {
+  //   if (value !== internalValue) {
+  //     setInternalValue(value || "");
+  //   }
+  // }, [value ]);
+
   useEffect(() => {
-    if (value !== internalValue) {
-      setInternalValue(value || "");
-    }
+    setInternalValue(value || "");
   }, [value]);
 
   useEffect(() => {
