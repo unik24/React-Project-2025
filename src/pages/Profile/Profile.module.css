@@ -1,0 +1,263 @@
+.profileCard {
+  background-color: #666666;
+  padding: 25px 35px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  width: 90%;
+  max-width: 550px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileImageSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.profileMainImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #007bff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  margin-bottom: 12px;
+}
+
+.profileMainIconPlaceholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #007bff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #777777; /* Slightly different background for the icon placeholder */
+}
+
+.profileName {
+  color: #ffffff;
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.profileForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 0px;
+}
+
+.formGroup label {
+  flex-basis: 120px;
+  flex-shrink: 0;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95em;
+  text-align: right;
+  padding-right: 8px;
+}
+
+.inputField,
+.selectField {
+  flex-grow: 1;
+  padding: 10px 12px;
+  border: 1px solid #bbbbbb;
+  border-radius: 6px;
+  font-size: 0.95em;
+  color: #333333;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+.inputField:focus,
+.selectField:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2.5px rgba(0, 123, 255, 0.3);
+}
+
+.selectField {
+  background-color: #ffffff;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M208.5%2C80.5h-161a15%2C15%2C0%2C0%2C0%2C-10.6%2C25.6l80.5%2C80.5a15%2C15%2C0%2C0%2C0%2C21.2%2C0l80.5%2C-80.5a15%2C15%2C0%2C0%2C0%2C-10.6%2C-25.6Z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 0.8rem;
+  padding-right: 2rem;
+}
+
+.imagePreviewContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.profileImagePreview {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.imagePreviewText {
+  color: #cccccc;
+  font-size: 0.85em;
+}
+
+.errorMessage {
+  font-size: 0.9em;
+  color: #ff6666;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.saveButton {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.05em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.saveButton:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.saveButton:active {
+  background-color: #004085;
+  transform: translateY(0);
+}
+
+.notLoggedInMessage {
+  font-size: 1.3em;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 40px;
+  padding: 15px;
+  background-color: #444444;
+  border: 1px solid #777777;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .profileCard {
+    padding: 20px 25px;
+    max-width: 95%;
+    margin: 30px auto;
+  }
+  .profileMainImage {
+    width: 100px;
+    height: 100px;
+  }
+  .profileName {
+    font-size: 1.6em;
+  }
+  .formGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .formGroup label {
+    text-align: left;
+    flex-basis: auto;
+    padding-right: 0;
+  }
+  .inputField,
+  .selectField {
+    padding: 8px 10px;
+    font-size: 0.95em;
+  }
+  .saveButton {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .profileCard {
+    padding: 15px 20px;
+    margin: 20px auto;
+  }
+  .profileMainImage {
+    width: 80px;
+    height: 80px;
+  }
+  .profileName {
+    font-size: 1.4em;
+  }
+  .formGroup label {
+    font-size: 0.9em;
+  }
+  .inputField,
+  .selectField {
+    font-size: 0.85em;
+    padding: 7px 9px;
+  }
+  .saveButton {
+    font-size: 0.95em;
+    padding: 9px 18px;
+  }
+}
+
+.successAlert {
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 0.95em;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeInOut 3s forwards;
+  width: 100%;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

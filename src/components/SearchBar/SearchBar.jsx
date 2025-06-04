@@ -1,19 +1,21 @@
 import React, { useCallback, useEffect, useState } from "react";
-import Button from "../Button";
+import Button from "../../components/Button/Button";
 import Input from "../Input/Input";
-import SearchIcon from "../SearchIcon/SearchIcon";
-import styles from "./SearchBar.module.css";
+import SearchIcon from "../Icons/SearchIcon/SearchIcon";
 import { searchMovies } from "../../services/api";
 import { useHomeReset } from "../../context/HomeResetContext";
+import styles from "./SearchBar.module.css";
 
-function SearchBar({ onResults }) {
+function SearchBar({ onResults, onSearchTriggered }) {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const { resetKey } = useHomeReset();
+  const { resetKey, startSearch, endSearch } = useHomeReset();
 
   const handleSearch = useCallback(async () => {
     if (!query.trim()) return;
+
+    startSearch();
     setLoading(true);
     try {
       const results = await searchMovies(query);
@@ -24,8 +26,9 @@ function SearchBar({ onResults }) {
       setError("Error fetching search results.");
     } finally {
       setLoading(false);
+      endSearch();
     }
-  }, [query, onResults]);
+  }, [query, onResults, startSearch, endSearch]);
 
   useEffect(() => {
     if (query.trim().length > 3) {
@@ -40,23 +43,27 @@ function SearchBar({ onResults }) {
 
   return (
     <div className={styles.searchBarContainer}>
-      <Input
-        icon={<SearchIcon />}
-        type="search"
-        placeholder="Search for movies"
-        value={query}
-        onChange={(val) => setQuery(val)}
-        debounce={500}
-      />
-
-      <Button
-        onClick={handleSearch}
-        className={styles.searchButton}
-        disabled={loading}
-      >
-      <SearchIcon />
-      </Button>
-      {error && <div className={styles.error}>{error}</div>}
+      <div className={styles.inputButtonWrapper}>
+        <Input
+          icon={<SearchIcon />}
+          type="search"
+          placeholder="Search for movies"
+          value={query}
+          onChange={(val) => setQuery(val)}
+          debounce={500}
+          className={styles.searchBarInputModified}
+        />
+        <Button
+          onClick={handleSearch}
+          buttonType="primary"
+          buttonSize="medium"
+          className={styles.searchButtonModified}
+          disabled={loading}
+        >
+          Search
+        </Button>
+        {error && <div className={styles.error}>{error}</div>}
+      </div>
     </div>
   );
 }

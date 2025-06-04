@@ -1,19 +1,21 @@
-import React from 'react';
-import styles from './Button.module.css';
+import React from "react";
+import styles from "./Button.module.css";
 
 const Button = ({
   children,
   onClick,
-  buttonType = 'primary',
-  buttonSize = 'medium',
+  buttonType = "primary",
+  buttonSize = "medium",
   buttonDisabled = false,
+  className: externalClassName,
 }) => {
   const className = [
     styles.btn,
     styles[buttonType],
     styles[buttonSize],
-    buttonDisabled ? styles.disabled : ''
-  ].join(' ');
+    buttonDisabled ? styles.disabled : "",
+    externalClassName,
+  ].join(" ");
 
   return (
     <button

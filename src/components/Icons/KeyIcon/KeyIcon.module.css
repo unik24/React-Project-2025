@@ -1,0 +1,24 @@
+.userIconWrapper {
+  display: flex; /* Ayuda a centrar el icono si es necesario y maneja el margen */
+  align-items: center; /* Alinea verticalmente el icono */
+  justify-content: center; /* Alinea horizontalmente el icono */
+  /* Por defecto, no ponemos margen aquí a menos que quieras uno general */
+}
+
+/* Clases para aplicar márgenes específicos, puedes agregar más si necesitas */
+.marginRightSmall {
+  margin-right: 8px; /* Un margen derecho pequeño, por ejemplo */
+}
+
+.marginRightMedium {
+  margin-right: 16px; /* Un margen derecho mediano */
+}
+
+.marginRightLarge {
+  margin-right: 24px; /* Un margen derecho grande */
+}
+
+/* Puedes añadir una clase general si siempre quieres un margen derecho por defecto */
+/* .defaultMarginRight {
+  margin-right: 10px;
+} */

@@ -6,10 +6,17 @@ export const useMovieContext = () => useContext(MovieContext);
 
 export const MovieProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
-  
+
   useEffect(() => {
     const storedFavs = localStorage.getItem("favorites");
-    if (storedFavs) setFavorites(JSON.parse(storedFavs));
+
+    if (storedFavs) {
+      try {
+        setFavorites(JSON.parse(storedFavs));
+      } catch (e) {
+        setFavorites([]);
+      }
+    }
   }, []);
 
   useEffect(() => {
@@ -17,11 +24,18 @@ export const MovieProvider = ({ children }) => {
   }, [favorites]);
 
   const addToFavorites = (movie) => {
-    setFavorites((prev) => [...prev, movie]);
+    setFavorites((prev) => {
+      const newFavs = [...prev, movie];
+
+      return newFavs;
+    });
   };
 
   const removeFromFavorites = (movieId) => {
-    setFavorites((prev) => prev.filter((movie) => movie.id !== movieId));
+    setFavorites((prev) => {
+      const newFavs = prev.filter((movie) => movie.id !== movieId);
+      return newFavs;
+    });
   };
 
   const isFavorite = (movieId) => {

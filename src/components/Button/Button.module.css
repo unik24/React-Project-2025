@@ -1,13 +1,12 @@
 .btn {
   border: none;
-  border-radius: 4px;
+  border-radius: 1px;
   font-weight: bold;
   cursor: pointer;
-  margin: 20px;
 }
 
 .buttonHolder {
-  margin: 20px;
+  margin: 5px;
 }
 
 /* Type Variants */
@@ -29,7 +28,7 @@
 /* Size Variants */
 .small {
   font-size: 12px;
-  padding: 3px 15px;
+  padding: 3px 10px;
 }
 
 .medium {

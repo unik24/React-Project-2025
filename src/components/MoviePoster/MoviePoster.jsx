@@ -1,22 +1,23 @@
 import React from "react";
 import styles from "./MoviePoster.module.css";
 
-const MoviePoster = ({ url, title, onLike, liked }) => {
-  console.log("MoviePoster URL:", url);
-
+const MoviePoster = ({ url, title, onLike, liked, isLoggedIn }) => {
   return (
     <div className={styles.poster}>
       <img src={url} alt={title} />
       <div className={styles.overlay}>
-        <button
-          onClick={(e) => {
-             e.preventDefault(); // prevents the Link from being triggered
-             onLike();            //toggles the like state
-          }}
-          className={`${styles.favoriteBtn} ${liked ? styles.active : ""}`}
-        >
-          {liked ? "♥" : "♡"}
-        </button>
+        {isLoggedIn && (
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+
+              onLike();
+            }}
+            className={`${styles.favoriteBtn} ${liked ? styles.active : ""}`}
+          >
+            {liked ? "♥" : "♡"}
+          </button>
+        )}
       </div>
     </div>
   );

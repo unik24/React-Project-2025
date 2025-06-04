@@ -67,3 +67,34 @@ export const searchMovies = async (query) => {
     throw err;
   }
 };
+
+export const fetchGenres = async () => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data.genres;
+  } catch (error) {
+    console.error("Failed to fetch genres:", error);
+    throw error;
+  }
+};
+
+export const fetchMoviesByGenre = async (genreId, page = 1) => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreId}`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Failed to fetch movies by genre:", error);
+    throw error;
+  }
+};

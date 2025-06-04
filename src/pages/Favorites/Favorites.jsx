@@ -11,17 +11,16 @@ function Favorites() {
         <h2>Your favorites</h2>
         <div className={styles.moviesGrid}>
           {favorites.map((movie, index) => (
-           <MovieCard
-  id={movie.id}
-  title={movie.title}
-  url={
-    movie.poster_path
-
-        ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-        : "/placeholder.jpg"
-  }
-  key={movie.id}
-/>
+            <MovieCard
+              id={movie.id}
+              title={movie.title}
+              url={
+                movie.poster_path
+                  ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                  : "/placeholder.jpg"
+              }
+              key={movie.id}
+            />
           ))}
         </div>
       </div>
@@ -29,11 +28,11 @@ function Favorites() {
   }
 
   return (
-  <div className={styles.favoritesEmpty}>
-    <h2>No favorite movies yet!</h2>
-    <p>Start exploring and add some movies to your favorites!</p>
-  </div>
-);
+    <div className={styles.favoritesEmpty}>
+      <h2>No favorite movies yet!</h2>
+      <p>Start exploring and add some movies to your favorites!</p>
+    </div>
+  );
 }
 
 export default Favorites;
