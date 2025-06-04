@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { fetchMovies } from "../../services/api";
+import { useLocation } from "react-router-dom";
+import { fetchMovies, fetchMoviesByGenre } from "../../services/api";
 import MovieCard from "../../components/MovieCard/MovieCard";
-import styles from "./Home.module.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { useHomeReset } from "../../context/HomeResetContext";
+import styles from "./Home.module.css";
 
 const Homepage = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { resetKey } = useHomeReset();
+  const location = useLocation();
 
-  const loadMovies = async () => {
+  const loadMovies = async (genreId = null) => {
     setLoading(true);
     try {
-      const data = await fetchMovies(1);
+      let data;
+      if (genreId) {
+        data = await fetchMoviesByGenre(genreId, 1);
+      } else {
+        data = await fetchMovies(1);
+      }
+
       setMovies(
         data.results.map((movie) => ({
           id: movie.id,
@@ -34,8 +42,11 @@ const Homepage = () => {
   };
 
   useEffect(() => {
-    loadMovies();
-  }, [resetKey]);
+    const queryParams = new URLSearchParams(location.search);
+    const genreId = queryParams.get("genre");
+
+    loadMovies(genreId);
+  }, [resetKey, location.search]);
 
   const handleLikeToggle = (movieId) => {
     setMovies((prevMovies) =>
@@ -52,16 +63,20 @@ const Homepage = () => {
     <div className={styles.homepage}>
       <SearchBar key={resetKey} onResults={setMovies} />
       <div className={styles.movieList}>
-        {movies.map(({ id, title, url, liked }) => (
-          <MovieCard
-            key={id}
-            id={id}
-            title={title}
-            url={url}
-            liked={liked}
-            onLikeToggle={() => handleLikeToggle(id)}
-          />
-        ))}
+        {movies.length > 0 ? (
+          movies.map(({ id, title, url, liked }) => (
+            <MovieCard
+              key={id}
+              id={id}
+              title={title}
+              url={url}
+              liked={liked}
+              onLikeToggle={() => handleLikeToggle(id)}
+            />
+          ))
+        ) : (
+          <p>No movies found.</p>
+        )}
       </div>
     </div>
   );
