@@ -25,6 +25,7 @@ This project was developed as part of a study course to practice React.js and wo
 - **Version Control**: Git & GitHub
 
 ## 📸 Screenshots
+<img width="1590" height="1080" alt="Movie" src="https://github.com/user-attachments/assets/5c7c4bb4-1e4e-43ca-b880-07c573be9df6" />
 
 
 ## 🧑‍🤝‍🧑 Team
