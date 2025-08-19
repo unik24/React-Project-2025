@@ -47,4 +47,4 @@ for their guidance and support during this project.
 1. Clone the repository:
    ```bash
   https://github.com/unik24/React-Project-2025.git
-```bash
+```
