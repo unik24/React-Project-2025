@@ -42,9 +42,4 @@ We would like to thank our mentors,
 [Chris Khong](https://github.com/chriskhongqarma) and  
 [Paolo Bozzini](https://github.com/PaoloBozzini)  
 for their guidance and support during this project.
-## 📦 Installation
 
-1. Clone the repository:
-   ```bash
-  https://github.com/unik24/React-Project-2025.git
-```
